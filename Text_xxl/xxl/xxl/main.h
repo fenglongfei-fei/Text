@@ -6,6 +6,9 @@
 #include <graphics.h>
 #include <time.h>
 #include <math.h>
+// 播放音乐
+#include <mmsystem.h>
+#pragma comment(lib,"winmm.lib")
 #include "tools.h"
 
 
@@ -57,6 +60,8 @@ bool isMoving;
 bool isSwap;
 
 int score;
+
+bool flag;
 
 void init();
 void UpdateWindow();  // 更新窗口

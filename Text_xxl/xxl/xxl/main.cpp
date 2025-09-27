@@ -4,8 +4,8 @@ using namespace std;
 // 初始化界面
 void  init()
 {
-	initgraph(WIN_WIDTH, WIN_HEIGHT,1);
-	loadimage(&imgBg,"Photo/xxl.png");
+	initgraph(WIN_WIDTH, WIN_HEIGHT);
+	loadimage(&imgBg,"Photo/bg2.png");
 
 	char name[64];
 	for (int i = 0; i < BLOCK_TYPE_COUNT; i++)
@@ -37,6 +37,14 @@ void  init()
 	score = 0;
 	setFont("Segoe UI Black", 20, 40);
 
+	// 播放音乐
+	/*mciSendString("play Photo/bg.mp3 repeat", 0, 0, 0);*/
+	// 调制背景音乐的大小；
+	mciSendString("open Photo/bg.mp3 alias bgm", 0, 0, 0);
+	mciSendString("play bgm repeat", 0, 0, 0);
+	mciSendString("setaudio bgm volume to 75", 0, 0, 0);
+	// 开始声音；
+	mciSendString("play Photo/start.mp3", 0, 0, 0);
 
 }
 
@@ -108,7 +116,9 @@ void userClick()
 				click = 0;
 				isSwap = true;
 
-				// 播放音乐
+				// 播放点击音效
+				mciSendString("play Photo/pao.wav", 0, SND_FILENAME, 0);
+
 			}
 			
 			else
@@ -196,15 +206,28 @@ void check()
 
 void xiaochu()
 {
+	flag = false;
 	for (int i = 1; i <= ROWS; i++)
 	{
 		for (int j = 1; j <= COLS; j++)
 		{
 			if (map[i][j].match && map[i][j].tmd > 10)
-			{ map[i][j].tmd -= 3;
+			{ 
+				if ((map[i][j].tmd) == 255)
+				{
+					flag = true;
+				}
+
+			map[i][j].tmd -= 10;
 			isMoving = true;
+			
 			}
 		}
+	}
+	if (flag)
+	{
+		// 播放消除音效；
+		mciSendString("play Photo/clear.wav", 0, 0, 0);
 	}
 }
 
