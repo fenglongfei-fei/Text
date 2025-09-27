@@ -23,7 +23,8 @@ struct block
 	int type;
 	int x;
 	int y;
-	int row, col;
+	int row;
+	int col;
 };
 
 struct block map[ROWS + 2][COLS + 2];
@@ -40,8 +41,15 @@ int posY1;
 int posX2;
 int posY2;
 
+// 是否正在移动；
+bool isMoving;  
+
+// 单击后设置为true；
+bool isSwap;
+
 void init();
 void UpdateWindow();  // 更新窗口
 void userClick();   // 用户点击
 void move();
 void huanyuan();
+void static exchange(int row1, int col1, int row2, int col2);
