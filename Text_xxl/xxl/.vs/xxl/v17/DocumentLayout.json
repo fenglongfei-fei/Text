@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\xxl\\Text_xxl-main\\xxl\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{21FA79F5-3C12-4EC4-A7FA-AF103DEDCE58}|xxl\\xxl.vcxproj|E:\\xxl\\Text_xxl-main\\xxl\\xxl\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{21FA79F5-3C12-4EC4-A7FA-AF103DEDCE58}|xxl\\xxl.vcxproj|solutionrelative:xxl\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21FA79F5-3C12-4EC4-A7FA-AF103DEDCE58}|xxl\\xxl.vcxproj|E:\\xxl\\Text_xxl-main\\xxl\\xxl\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{21FA79F5-3C12-4EC4-A7FA-AF103DEDCE58}|xxl\\xxl.vcxproj|solutionrelative:xxl\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21FA79F5-3C12-4EC4-A7FA-AF103DEDCE58}|xxl\\xxl.vcxproj|E:\\xxl\\Text_xxl-main\\xxl\\xxl\\tools.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{21FA79F5-3C12-4EC4-A7FA-AF103DEDCE58}|xxl\\xxl.vcxproj|solutionrelative:xxl\\tools.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21FA79F5-3C12-4EC4-A7FA-AF103DEDCE58}|xxl\\xxl.vcxproj|E:\\xxl\\Text_xxl-main\\xxl\\xxl\\tools.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{21FA79F5-3C12-4EC4-A7FA-AF103DEDCE58}|xxl\\xxl.vcxproj|solutionrelative:xxl\\tools.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1471:0:{5d51d786-731c-4256-bf95-6a6dd495c7d7}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "tools.cpp",
+              "DocumentMoniker": "E:\\xxl\\Text_xxl-main\\xxl\\xxl\\tools.cpp",
+              "RelativeDocumentMoniker": "xxl\\tools.cpp",
+              "ToolTip": "E:\\xxl\\Text_xxl-main\\xxl\\xxl\\tools.cpp",
+              "RelativeToolTip": "xxl\\tools.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-27T06:01:01.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "tools.h",
+              "DocumentMoniker": "E:\\xxl\\Text_xxl-main\\xxl\\xxl\\tools.h",
+              "RelativeDocumentMoniker": "xxl\\tools.h",
+              "ToolTip": "E:\\xxl\\Text_xxl-main\\xxl\\xxl\\tools.h",
+              "RelativeToolTip": "xxl\\tools.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-27T06:01:00.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.h",
+              "DocumentMoniker": "E:\\xxl\\Text_xxl-main\\xxl\\xxl\\main.h",
+              "RelativeDocumentMoniker": "xxl\\main.h",
+              "ToolTip": "E:\\xxl\\Text_xxl-main\\xxl\\xxl\\main.h",
+              "RelativeToolTip": "xxl\\main.h",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-27T05:55:54.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "E:\\xxl\\Text_xxl-main\\xxl\\xxl\\main.cpp",
+              "RelativeDocumentMoniker": "xxl\\main.cpp",
+              "ToolTip": "E:\\xxl\\Text_xxl-main\\xxl\\xxl\\main.cpp",
+              "RelativeToolTip": "xxl\\main.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAMwB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-27T02:34:05.074Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
