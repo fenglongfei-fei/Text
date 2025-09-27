@@ -5,6 +5,8 @@ using namespace std;
 void  init()
 {
 	initgraph(WIN_WIDTH, WIN_HEIGHT);
+	//initgraph(WIN_WIDTH, WIN_HEIGHT,1);
+
 	loadimage(&imgBg,"Photo/bg2.png");
 
 	char name[64];
@@ -43,8 +45,8 @@ void  init()
 	mciSendString("open Photo/bg.mp3 alias bgm", 0, 0, 0);
 	mciSendString("play bgm repeat", 0, 0, 0);
 	mciSendString("setaudio bgm volume to 75", 0, 0, 0);
-	// 开始声音；
-	mciSendString("play Photo/start.mp3", 0, 0, 0);
+	// 开始声音； Ready go!
+	/*mciSendString("play Photo/start.mp3", 0, 0, 0);*/
 
 }
 
@@ -293,7 +295,6 @@ int main(void)
 		//if (isMoving)
 
 		Sleep(5);
-
 	}
 	system("pause");
 	return 0;
