@@ -21,13 +21,13 @@ void  init()
 	{
 		for (int j = 1; j <= COLS; j++)
 		{
-			map[i][j].type = 1 + rand() % 4;
+			map[i][j].type = 1 + rand() % 5;
 			map[i][j].row = i;
 			map[i][j].col = j;
 			map[i][j].x = off_x + (j - 1) * (block_size + 5);
 			map[i][j].y = off_y + (i - 1) * (block_size + 5);
 			map[i][j].match = 0;
-
+			map[i][j].tmd = 255;
 		}
 	}
 
@@ -49,7 +49,7 @@ void  UpdateWindow()
 			if (map[i][j].type)
 			{
 				IMAGE* img = &imgBlock[map[i][j].type - 1];
-				putimagePNG(map[i][j].x, map[i][j].y, img);
+				putimageTMD(map[i][j].x, map[i][j].y, img,map[i][j].tmd);
 			}
 		}
 	}
@@ -186,6 +186,58 @@ void check()
 	}
 }
 
+void xiaochu()
+{
+	for (int i = 1; i <= ROWS; i++)
+	{
+		for (int j = 1; j <= COLS; j++)
+		{
+			if (map[i][j].match && map[i][j].tmd > 10)
+			{ map[i][j].tmd -= 3;
+			isMoving = true;
+			}
+		}
+	}
+}
+
+void UpdateGame()
+{
+	for (int i = ROWS; i >= 1; i--)
+	{
+		for (int j = 1; j <= COLS; j++)
+		{
+			if (map[i][j].match)
+			{
+				for (int k = i - 1; k >= 1; k--)
+				{
+					if (map[k][j].match == 0)
+					{
+						exchange(k, j, i, j);
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	for (int j = 1; j <= COLS; j++)
+	{
+		int n = 0;
+		for (int i = ROWS; i >= 1; i--)
+		{
+			if (map[i][j].match)
+			{
+				map[i][j].type = 1 + rand() % 5;
+				map[i][j].y = off_y - (n + 1) * (block_size + 5);
+				n++;
+				map[i][j].match = 0;
+				map[i][j].tmd = 255;
+			}
+		}
+	}
+}
+
+
 
 int main(void)
 {
@@ -196,8 +248,14 @@ int main(void)
 		userClick();  
 		check();  // Æ¥Åä¼ì²é´ÎÊý
 		move();
+
+		if (!isMoving) 
+		xiaochu();
+
 		huanyuan();
 		UpdateWindow();
+
+		if (!isMoving) UpdateGame();  // ½µÂä
 
 		Sleep(10);
 

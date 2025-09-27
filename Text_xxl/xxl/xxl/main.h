@@ -31,6 +31,9 @@ struct block
 	// Æ¥Åä´ÎÊý£»
 	bool match; 
 
+	int tmd;
+
+
 };
 
 struct block map[ROWS + 2][COLS + 2];
@@ -60,3 +63,5 @@ void move();
 void huanyuan();
 void static exchange(int row1, int col1, int row2, int col2);
 void check();
+void xiaochu();
+void UpdateGame();
