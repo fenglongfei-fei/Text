@@ -56,6 +56,8 @@ bool isMoving;
 // 单击后设置为true；
 bool isSwap;
 
+int score;
+
 void init();
 void UpdateWindow();  // 更新窗口
 void userClick();   // 用户点击

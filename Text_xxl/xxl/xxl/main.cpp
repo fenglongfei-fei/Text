@@ -34,13 +34,16 @@ void  init()
 	click = 0;
 	isMoving = false;
 	isSwap = false;
+	score = 0;
+	setFont("Segoe UI Black", 20, 40);
+
 
 }
 
 
 void  UpdateWindow()
 {
-	BeginBatchDraw();
+	BeginBatchDraw();   // 开始缓冲；
 	putimage(0, 0, &imgBg);
 	for (int i = 1; i <=ROWS; i++)
 	{
@@ -53,7 +56,12 @@ void  UpdateWindow()
 			}
 		}
 	}
-	EndBatchDraw();
+	char scoreStr[16];
+	sprintf_s(scoreStr, sizeof(scoreStr), "%d", score);
+	int x = 395 + (75 - strlen(scoreStr) * 20) / 2;
+	outtextxy(x,70,scoreStr);
+
+	EndBatchDraw(); // 结束缓冲；
 }
 
 void static exchange(int row1, int col1, int row2, int col2)
@@ -220,6 +228,7 @@ void UpdateGame()
 		}
 	}
 
+	//生成新方块,进行降落处理；
 	for (int j = 1; j <= COLS; j++)
 	{
 		int n = 0;
@@ -234,6 +243,7 @@ void UpdateGame()
 				map[i][j].tmd = 255;
 			}
 		}
+		score += n;
 	}
 }
 
@@ -241,7 +251,7 @@ void UpdateGame()
 
 int main(void)
 {
-	init();
+	init();  // 初始化；
 
 	while (true)
 	{
@@ -257,7 +267,9 @@ int main(void)
 
 		if (!isMoving) UpdateGame();  // 降落
 
-		Sleep(10);
+		//if (isMoving)
+
+		Sleep(5);
 
 	}
 	system("pause");
