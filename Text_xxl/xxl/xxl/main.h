@@ -21,10 +21,16 @@ IMAGE imgBlock[BLOCK_TYPE_COUNT];
 struct block
 {
 	int type;
+
 	int x;
 	int y;
+
 	int row;
 	int col;
+
+	// 匹配次数；
+	bool match; 
+
 };
 
 struct block map[ROWS + 2][COLS + 2];
@@ -53,3 +59,4 @@ void userClick();   // 用户点击
 void move();
 void huanyuan();
 void static exchange(int row1, int col1, int row2, int col2);
+void check();

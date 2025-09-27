@@ -1,6 +1,7 @@
 #include "main.h"
 using namespace std;
 
+// 初始化界面
 void  init()
 {
 	initgraph(WIN_WIDTH, WIN_HEIGHT,1);
@@ -20,11 +21,13 @@ void  init()
 	{
 		for (int j = 1; j <= COLS; j++)
 		{
-			map[i][j].type = 1+rand() % 4;
+			map[i][j].type = 1 + rand() % 4;
 			map[i][j].row = i;
 			map[i][j].col = j;
 			map[i][j].x = off_x + (j - 1) * (block_size + 5);
 			map[i][j].y = off_y + (i - 1) * (block_size + 5);
+			map[i][j].match = 0;
+
 		}
 	}
 
@@ -33,6 +36,7 @@ void  init()
 	isSwap = false;
 
 }
+
 
 void  UpdateWindow()
 {
@@ -95,6 +99,7 @@ void userClick()
 				exchange(posX1,posY1,posX2,posY2);
 				click = 0;
 				isSwap = true;
+
 				// 播放音乐
 			}
 			
@@ -142,9 +147,45 @@ void huanyuan()
 	// 发生移动后 单向结束
 	if (isSwap && !isMoving)
 	{
+		int count = 0;
+		for (int i = 1; i <= ROWS; i++)
+		{
+			for (int j = 1; j <= COLS; j++)
+			{
+				count += map[i][j].match;
+			}
+		}
+
+		if (count==0)
+		{
+			exchange(posX1, posY1, posX2, posY2);
+		}
+
 		isSwap = false;
 	}
 }
+
+
+void check()
+{
+	for (int i = 1; i <= ROWS; i++)
+	{
+		for (int j = 1; j <= COLS; j++)
+		{
+			if (map[i][j].type == map[i + 1][j].type && map[i][j].type == map[i - 1][j].type)
+			{
+				for (int k = -1; k <= 1; k++) map[i + k][j].match++;
+			}
+
+			if (map[i][j].type == map[i][j - 1].type && map[i][j].type == map[i][j+1].type)
+			{
+				for (int k = -1; k <= 1; k++) map[i][j + k].match++;
+			}
+
+		}
+	}
+}
+
 
 int main(void)
 {
@@ -152,7 +193,8 @@ int main(void)
 
 	while (true)
 	{
-		userClick();
+		userClick();  
+		check();  // 匹配检查次数
 		move();
 		huanyuan();
 		UpdateWindow();
