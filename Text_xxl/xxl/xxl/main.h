@@ -5,8 +5,9 @@
 #include <easyx.h>
 #include <graphics.h>
 #include <time.h>
+#include <math.h>
 #include "tools.h"
-using namespace std;
+
 
 #define WIN_WIDTH 474
 #define WIN_HEIGHT 899
@@ -27,10 +28,17 @@ struct block
 
 struct block map[ROWS + 2][COLS + 2];
 
-const int off_x = 20;
-const int off_y = 250;
-const int block_size = 55;
+const int off_x = 15;
+const int off_y = 200;
+const int block_size = 50;
 
+int click;
+// 第一次单击的行和列
+int posX1;
+int posY1;
+// 第二次单击的行和列
+int posX2;
+int posY2;
 
 void init();
 void UpdateWindow();  // 更新窗口
